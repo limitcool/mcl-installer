@@ -14,7 +14,7 @@ use reqwest::{Client, Error, Response};
 use serde::Deserialize;
 use zip::ZipArchive;
 
-const MIRAI_REPO: &str = "https://gitee.com/peratx/mirai-repo/raw/master";
+// const MIRAI_REPO: &str = "https://raw.githubusercontent.com/limitcool/mcl-installer/master/raw/package.json";
 
 const PROG_VERSION: &str = "1.0.3";
 
@@ -325,7 +325,7 @@ async fn main() {
         println!();
     }
 
-    let manifest_url = format!("{}/org/itxtech/mcl/package.json", MIRAI_REPO);
+    let manifest_url = format!("https://raw.githubusercontent.com/limitcool/mcl-installer/master/raw/package.json");
     println!("Fetching iTXTech MCL Package Info from {}", manifest_url);
     let manifest = get(&client, &manifest_url)
         .await
